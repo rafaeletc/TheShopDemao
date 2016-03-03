@@ -287,9 +287,9 @@ function live_chat() {
 		var h = d.getElementsByTagName(s)[0],
 			j = d.createElement(s);
 		j.async = true;
-		j.src = 'http://chat.etcetal.me/packages/rocketchat_livechat/assets/rocket-livechat.js';
+		j.src = 'https://chat.etcetal.me/packages/rocketchat_livechat/assets/rocket-livechat.js';
 		h.parentNode.insertBefore(j, h);
-	})(window, document, 'script', 'initRocket', 'http://chat.etcetal.me/livechat');
+	})(window, document, 'script', 'initRocket', 'https://chat.etcetal.me/livechat');
 	</script>
 	<!-- End of Rocket.Chat Livechat Script -->
     ";

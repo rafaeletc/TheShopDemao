@@ -1,6 +1,6 @@
 <?php
 /**
- * @package TheShop
+ * @package TheShopDemao
  */
 
 
@@ -32,7 +32,7 @@ function theshop_custom_styles($custom) {
 		$custom .= ".hero-section {display:block;}"."\n";
 	}
 
-	//Sections styling        
+	//Sections styling
     $products_bg_color 	= get_theme_mod('products_bg_color', '#fff');
     $cta_bg_color 		= get_theme_mod('cta_bg_color', '#2C292A');
     $cats_bg_color 		= get_theme_mod('cats_bg_color', '#f7f7f7');
@@ -56,18 +56,18 @@ function theshop_custom_styles($custom) {
 	if ( $primary_color != '#9FAFF1' ) {
 		$custom .= ".woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button, .woocommerce div.product p.price,.woocommerce div.product span.price,.woocommerce .woocommerce-info:before,.woocommerce .woocommerce-message:before,.woocommerce .woocommerce-message:before,.preloader .preloader-inner,.entry-title a:hover,.woocommerce .star-rating span,a, a:hover, .main-navigation a:hover { color:" . esc_attr($primary_color) . "}"."\n";
 		$custom .= ".add_to_cart_button::before,.cart-button::before,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce span.onsale,.owl-theme .owl-controls .owl-page span,li.nav-cart,.widget-title::after,.post-navigation a,.posts-navigation a,.secondary-navigation li:hover,.secondary-navigation ul ul,button, .button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"] { background-color:" . esc_attr($primary_color) . "}"."\n";
-		$custom .= ".woocommerce .woocommerce-info,.woocommerce .woocommerce-message,.woocommerce .woocommerce-error,.woocommerce .woocommerce-info,.woocommerce .woocommerce-message,.main-navigation ul ul { border-top-color:" . esc_attr($primary_color) . ";}"."\n";	
-		$custom .= ".woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover { border-color:" . esc_attr($primary_color) . ";}"."\n";	
+		$custom .= ".woocommerce .woocommerce-info,.woocommerce .woocommerce-message,.woocommerce .woocommerce-error,.woocommerce .woocommerce-info,.woocommerce .woocommerce-message,.main-navigation ul ul { border-top-color:" . esc_attr($primary_color) . ";}"."\n";
+		$custom .= ".woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover { border-color:" . esc_attr($primary_color) . ";}"."\n";
 
 	}
 	//Body
 	$body_text = get_theme_mod( 'body_text_color', '#4c4c4c' );
 	$custom .= "body, .widget a { color:" . esc_attr($body_text) . "}"."\n";
-	
+
 	//Menu
 	$menu_bg = get_theme_mod( 'menu_bg', '#fff' );
 	$custom .= ".site-header { background-color:" . esc_attr($menu_bg) . "}"."\n";
-	
+
 	//Menu items
 	$menu_color = get_theme_mod( 'menu_color', '#1c1c1c' );
 	$custom .= ".main-navigation a { color:" . esc_attr($menu_color) . "}"."\n";
@@ -75,13 +75,13 @@ function theshop_custom_styles($custom) {
 	//Site title
 	$site_title = get_theme_mod( 'site_title_color', '#1c1c1c' );
 	$custom .= ".site-title a, .site-title a:hover { color:" . esc_attr($site_title) . "}"."\n";
-	
+
 	//Site desc
 	$site_desc = get_theme_mod( 'site_desc_color', '#767676' );
 	$custom .= ".site-description { color:" . esc_attr($site_desc) . "}"."\n";
-	
+
 	//Fonts
-	$body_fonts = get_theme_mod('body_font_family');	
+	$body_fonts = get_theme_mod('body_font_family');
 	$headings_fonts = get_theme_mod('headings_font_family');
 	if ( $body_fonts !='' ) {
 		$custom .= "body, .main-navigation ul ul li { font-family:" . $body_fonts . ";}"."\n";
@@ -98,7 +98,7 @@ function theshop_custom_styles($custom) {
     $site_desc_size = get_theme_mod( 'site_desc_size', '14' );
     if ( get_theme_mod( 'site_desc_size' )) {
         $custom .= ".site-description { font-size:" . intval($site_desc_size) . "px; }"."\n";
-    }	    	
+    }
 	//H1 size
 	$h1_size = get_theme_mod( 'h1_size' );
 	if ( get_theme_mod( 'h1_size' )) {
@@ -136,6 +136,6 @@ function theshop_custom_styles($custom) {
     }
 
 	//Output all the styles
-	wp_add_inline_style( 'theshop-style', $custom );	
+	wp_add_inline_style( 'theshop-style', $custom );
 }
 add_action( 'wp_enqueue_scripts', 'theshop_custom_styles' );

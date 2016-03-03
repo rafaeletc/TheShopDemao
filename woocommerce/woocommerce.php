@@ -2,10 +2,10 @@
 /**
  * Woocommerce compatibility
  *
- * @package TheShop
+ * @package TheShopDemao
  */
 
-//Check if Woocommerce is active	
+//Check if Woocommerce is active
 function theshop_woocommerce_active() {
 	if ( class_exists( 'woocommerce' ) ) { return true; } else { return false; }
 }
@@ -25,7 +25,7 @@ function theshop_woocommerce_support() {
  * Remove default WooCommerce CSS
  */
 function theshop_dequeue_styles( $enqueue_styles ) {
-    unset( $enqueue_styles['woocommerce-general'] ); 
+    unset( $enqueue_styles['woocommerce-general'] );
     return $enqueue_styles;
 }
 add_filter( 'woocommerce_enqueue_styles', 'theshop_dequeue_styles' );
@@ -44,11 +44,11 @@ add_action( 'wp_enqueue_scripts', 'theshop_woocommerce_css', 9 );
 function theshop_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
-	<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'theshop' ); ?>"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count, 'theshop' ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a> 
+	<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart', 'theshopdemao' ); ?>"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count, 'theshopdemao' ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
 	<?php
-	
+
 	$fragments['a.cart-contents'] = ob_get_clean();
-	
+
 	return $fragments;
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'theshop_header_add_to_cart_fragment' );
@@ -58,7 +58,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'theshop_header_add_to_cart_fra
  */
 function theshop_nav_cart ( $items, $args ) {
     if ( $args->theme_location == 'primary' ) {
-		$items .= '<li class="nav-cart"><i class="fa fa-shopping-cart"></i><a class="cart-contents" href="' . WC()->cart->get_cart_url() . '" title="' . __( 'View your shopping cart', 'theshop' ) . '">' . sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count, 'theshop' ), WC()->cart->cart_contents_count ) . '-' . WC()->cart->get_cart_total() . '</a></li>';
+		$items .= '<li class="nav-cart"><i class="fa fa-shopping-cart"></i><a class="cart-contents" href="' . WC()->cart->get_cart_url() . '" title="' . __( 'View your shopping cart', 'theshopdemao' ) . '">' . sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count, 'theshopdemao' ), WC()->cart->cart_contents_count ) . '-' . WC()->cart->get_cart_total() . '</a></li>';
     }
     return $items;
 }

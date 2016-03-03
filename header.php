@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package TheShop
+ * @package TheShopDemao
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -25,8 +25,8 @@
     </div>
 </div>
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theshop' ); ?></a>
-	
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theshopdemao' ); ?></a>
+
 	<header id="masthead" class="site-header clearfix" role="banner">
 		<div class="container">
 			<div class="site-branding col-md-4">
@@ -39,14 +39,14 @@
 			<nav class="mobile-nav"></nav>
 		</div>
 	</header><!-- #masthead -->
-	
+
 	<?php if ( !is_home() ) : ?>
 	<div class="header-promo">
 		<div class="container">
 			<?php theshop_top_promo(); ?>
 		</div>
-	</div>	
-	<?php endif; ?>	
+	</div>
+	<?php endif; ?>
 
 	<?php
 	$header_front = get_theme_mod('header_active_front', 'full');
@@ -59,7 +59,7 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => 'theshop_menu_fallback' ) ); ?>
 			<div class="s-mobile-nav"></div>
 		</nav>
-		<?php endif; ?>	
+		<?php endif; ?>
 		<div class="header-slider">
 			<?php theshop_slider(); ?>
 		</div>
@@ -69,4 +69,4 @@
 	<div id="content" class="site-content">
 	<?php if ( !is_page_template('page-templates/page_front-page.php') ) : ?>
 	<div class="container content-wrapper">
-	<?php endif; ?>		
+	<?php endif; ?>

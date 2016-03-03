@@ -2,7 +2,7 @@
 /**
  * Functions for the header
  *
- * @package TheShop
+ * @package TheShopDemao
  */
 
 
@@ -37,7 +37,7 @@ endif;
 if ( ! function_exists( 'theshop_branding' ) ) :
 function theshop_branding() {
 	if ( get_theme_mod('site_logo') ) :
-		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr(get_bloginfo('name')) . '"><img class="site-logo" src="' . esc_url(get_theme_mod('site_logo')) . '" alt="' . esc_attr(get_bloginfo('name')) . '" /></a>'; 
+		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr(get_bloginfo('name')) . '"><img class="site-logo" src="' . esc_url(get_theme_mod('site_logo')) . '" alt="' . esc_attr(get_bloginfo('name')) . '" /></a>';
 	else :
 		echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a></h1>';
 		if ( get_bloginfo( 'description' ) ) {
@@ -61,11 +61,11 @@ function theshop_slider() {
 	$images[] = get_theme_mod('slider_image_5');
 
 	$links = array();
-	$links[] = get_theme_mod('slider_link_1'); 
-	$links[] = get_theme_mod('slider_link_2'); 
-	$links[] = get_theme_mod('slider_link_3'); 
-	$links[] = get_theme_mod('slider_link_4'); 
-	$links[] = get_theme_mod('slider_link_5'); 
+	$links[] = get_theme_mod('slider_link_1');
+	$links[] = get_theme_mod('slider_link_2');
+	$links[] = get_theme_mod('slider_link_3');
+	$links[] = get_theme_mod('slider_link_4');
+	$links[] = get_theme_mod('slider_link_5');
 
 	echo '<ul>';
 		foreach ($images as $index => $image) {

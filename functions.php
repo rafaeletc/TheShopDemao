@@ -1,8 +1,8 @@
 <?php
 /**
- * TheShop functions and definitions
+ * TheShopDemao functions and definitions
  *
- * @package TheShop
+ * @package TheShopDemao
  */
 
 if ( ! function_exists( 'theshop_setup' ) ) :
@@ -19,9 +19,9 @@ function theshop_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on TheShop, use a find and replace
-	 * to change 'theshop' to the name of your theme in all the template files
+	 * to change 'theshopdemao' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'theshop', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'theshopdemao', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -51,8 +51,8 @@ function theshop_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'theshop' ),
-		'secondary' => esc_html__( 'Side menu', 'theshop' ),
+		'primary' => esc_html__( 'Primary Menu', 'theshopdemao' ),
+		'secondary' => esc_html__( 'Side menu', 'theshopdemao' ),
 	) );
 
 	/*
@@ -87,7 +87,7 @@ add_action( 'after_setup_theme', 'theshop_setup' );
  */
 function theshop_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'theshop' ),
+		'name'          => esc_html__( 'Sidebar', 'theshopdemao' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -100,7 +100,7 @@ function theshop_widgets_init() {
 	$widget_areas = get_theme_mod('footer_widget_areas', '3');
 	for ($i=1; $i<=$widget_areas; $i++) {
 		register_sidebar( array(
-			'name'          => __( 'Footer ', 'theshop' ) . $i,
+			'name'          => __( 'Footer ', 'theshopdemao' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -108,7 +108,7 @@ function theshop_widgets_init() {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
-	}	
+	}
 }
 add_action( 'widgets_init', 'theshop_widgets_init' );
 
@@ -120,18 +120,18 @@ function theshop_scripts() {
 	wp_enqueue_style( 'theshop-style', get_stylesheet_uri() );
 
 	if ( get_theme_mod('body_font_name') !='' ) {
-	    wp_enqueue_style( 'theshop-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_name')) ); 
+	    wp_enqueue_style( 'theshop-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_name')) );
 	} else {
 	    wp_enqueue_style( 'theshop-body-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic');
 	}
 
 	if ( get_theme_mod('headings_font_name') !='' ) {
-	    wp_enqueue_style( 'theshop-headings-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('headings_font_name')) ); 
+	    wp_enqueue_style( 'theshop-headings-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('headings_font_name')) );
 	} else {
-	    wp_enqueue_style( 'theshop-headings-fonts', '//fonts.googleapis.com/css?family=Oswald:300,400,700'); 
+	    wp_enqueue_style( 'theshop-headings-fonts', '//fonts.googleapis.com/css?family=Oswald:300,400,700');
 	}
 
-	wp_enqueue_style( 'theshop-fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );	
+	wp_enqueue_style( 'theshop-fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );
 
 	wp_enqueue_script( 'theshop-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -139,7 +139,7 @@ function theshop_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'theshop-unslider', get_template_directory_uri() . '/js/main.min.js', array('jquery'), '', true );	
+	wp_enqueue_script( 'theshop-unslider', get_template_directory_uri() . '/js/main.min.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'theshop-scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '', true );
 
@@ -189,11 +189,11 @@ add_filter( 'excerpt_length', 'theshop_excerpt_length', 999 );
  */
 function theshop_menu_fallback() {
 	echo '<ul class="menu">';
-	echo '<li><i class="fa fa-child"></i><a href="#">' . __( 'Kids clothing', 'theshop' ) . '</a></li>';
-	echo '<li><i class="fa fa-bicycle"></i><a href="#">' . __( 'Sports', 'theshop' ) . '</a></li>';
-	echo '<li><i class="fa fa-book"></i><a href="#">' . __( 'Books', 'theshop' ) . '</a></li>';
-	echo '<li><i class="fa fa-diamond"></i><a href="#">' . __( 'Jewelry', 'theshop' ) . '</a></li>';
-	echo '<li><i class="fa fa-briefcase"><a href="#"></i>' . __( 'Accessories', 'theshop' ) . '</a></li>';
+	echo '<li><i class="fa fa-child"></i><a href="#">' . __( 'Kids clothing', 'theshopdemao' ) . '</a></li>';
+	echo '<li><i class="fa fa-bicycle"></i><a href="#">' . __( 'Sports', 'theshopdemao' ) . '</a></li>';
+	echo '<li><i class="fa fa-book"></i><a href="#">' . __( 'Books', 'theshopdemao' ) . '</a></li>';
+	echo '<li><i class="fa fa-diamond"></i><a href="#">' . __( 'Jewelry', 'theshopdemao' ) . '</a></li>';
+	echo '<li><i class="fa fa-briefcase"><a href="#"></i>' . __( 'Accessories', 'theshopdemao' ) . '</a></li>';
 	echo '</ul>';
 }
 
@@ -210,11 +210,11 @@ add_filter( 'post_class', 'theshop_clearfix_posts' );
  * Footer credits
  */
 function theshop_footer_credits() {
-	echo '<a href="' . esc_url( __( 'http://wordpress.org/', 'theshop' ) ) . '">';
-		printf( __( 'Proudly powered by %s', 'theshop' ), 'WordPress' );
+	echo '<a href="' . esc_url( __( 'http://wordpress.org/', 'theshopdemao' ) ) . '">';
+		printf( __( 'Proudly powered by %s', 'theshopdemao' ), 'WordPress' );
 	echo '</a>';
 	echo '<span class="sep"> | </span>';
-	printf( __( 'Theme: %2$s by %1$s.', 'theshop' ), 'aThemes', '<a href="http://athemes.com/theme/theshop" rel="designer">TheShop</a>' );
+	printf( __( 'Theme: %2$s by %1$s.', 'theshopdemao' ), 'aThemes', '<a href="http://athemes.com/theme/theshop" rel="designer">TheShop</a>' );
 }
 add_action( 'theshop_footer', 'theshop_footer_credits' );
 

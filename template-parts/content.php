@@ -1,6 +1,6 @@
 <?php
 /**
- * @package TheShop
+ * @package TheShopDemao
  */
 ?>
 
@@ -9,7 +9,7 @@
 	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'index_feat_image' ) != 1 ) ) : ?>
 		<div class="entry-thumb">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('theshop-small'); ?></a>
-		</div>	
+		</div>
 	<?php endif; ?>
 
 
@@ -17,7 +17,7 @@
 	<div class="inner-content">
 	<?php else : ?>
 	<div class="inner-content no-thumb">
-	<?php endif; ?>	
+	<?php endif; ?>
 		<header class="entry-header">
 			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
@@ -37,7 +37,7 @@
 
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theshop' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theshopdemao' ),
 					'after'  => '</div>',
 				) );
 			?>

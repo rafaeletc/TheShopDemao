@@ -1,6 +1,6 @@
 <?php
 /**
- * @package TheShop
+ * @package TheShopDemao
  */
 ?>
 
@@ -11,7 +11,7 @@
 			<?php the_post_thumbnail('theshop-large'); ?>
 		</div>
 	<?php endif; ?>
-	
+
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
@@ -26,7 +26,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theshop' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'theshopdemao' ),
 				'after'  => '</div>',
 			) );
 		?>

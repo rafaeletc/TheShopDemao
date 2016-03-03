@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package TheShop
+ * @package TheShopDemao
  */
 
 get_header(); ?>

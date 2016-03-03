@@ -274,6 +274,9 @@ require get_template_directory() . '/woocommerce/woocommerce.php';
 /**
  * Live Chat
  */
+if ( !is_super_admin() ) {
+	add_action( 'wp_footer', 'live_chat' );
+}
 function live_chat() {
     echo "
 	<!-- Start of Rocket.Chat Livechat Script -->
@@ -291,4 +294,3 @@ function live_chat() {
 	<!-- End of Rocket.Chat Livechat Script -->
     ";
 }
-add_action( 'wp_footer', 'live_chat' );

@@ -270,3 +270,25 @@ require get_template_directory() . '/inc/header-functions.php';
  * Woocommerce
  */
 require get_template_directory() . '/woocommerce/woocommerce.php';
+
+/**
+ * Live Chat
+ */
+function live_chat() {
+    echo "
+	<!-- Start of Rocket.Chat Livechat Script -->
+	<script>
+	(function(w, d, s, f, u) {
+		w[f] = w[f] || [];
+		w[f].push(u);
+		var h = d.getElementsByTagName(s)[0],
+			j = d.createElement(s);
+		j.async = true;
+		j.src = 'http://chat.etcetal.me/packages/rocketchat_livechat/assets/rocket-livechat.js';
+		h.parentNode.insertBefore(j, h);
+	})(window, document, 'script', 'initRocket', 'http://chat.etcetal.me/livechat');
+	</script>
+	<!-- End of Rocket.Chat Livechat Script -->
+    ";
+}
+add_action( 'wp_footer', 'live_chat' );
